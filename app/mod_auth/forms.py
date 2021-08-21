@@ -1,11 +1,9 @@
-from flask.ext.wtf import Form
-
-from wtforms import TextField, PasswordField
-
-from wtforms.validators import Required, Email, EqualTo
+from flask_wtf import FlaskForm
+from wtforms import PasswordField, TextField
+from wtforms.validators import Email, EqualTo, Required
 
 
-class LoginForm(Form):
+class LoginForm(FlaskForm):
     email = TextField('Email Address', [Email(),
                                         Required(message='Forgot your email address?')])
     password = PasswordField('Password', [
